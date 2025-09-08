@@ -392,3 +392,131 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+// Add this to your setupEventListeners function
+function setupEventListeners() {
+    // ... existing code ...
+
+    // Reset game button
+    document.getElementById('reset-game-btn').addEventListener('click', showResetConfirmation);
+}
+
+// Show reset confirmation
+function showResetConfirmation() {
+    const modal = document.createElement('div');
+    modal.className = 'reset-modal';
+    modal.innerHTML = `
+        <div class="reset-modal-content">
+            <h3>🔄 Reset Your Progress?</h3>
+            <p>Are you sure you want to reset all your progress?</p>
+            <p><strong>This will:</strong></p>
+            <ul style="text-align: left; margin: 1rem 0;">
+                <li>Reset all points to 0</li>
+                <li>Remove all badges</li>
+                <li>Mark all steps as incomplete</li>
+                <li>Start fresh from the beginning</li>
+            </ul>
+            <p><em>This action cannot be undone!</em></p>
+            <div class="reset-modal-buttons">
+                <button class="confirm-reset">Yes, Reset Everything</button>
+                <button class="cancel-reset">Cancel</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Event listeners for modal buttons
+    modal.querySelector('.confirm-reset').addEventListener('click', () => {
+        resetGame();
+        modal.remove();
+    });
+    
+    modal.querySelector('.cancel-reset').addEventListener('click', () => {
+        modal.remove();
+    });
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+// Reset game function
+function resetGame() {
+    // Reset game state
+    gameState = {
+        totalPoints: 0,
+        badges: {
+            connector: false,
+            charts: false,
+            design: false,
+            filters: false,
+            hero: false
+        },
+        moduleProgress: {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0
+        },
+        completedSteps: new Set()
+    };
+    
+    // Clear localStorage
+    localStorage.removeItem('powerbi-game-progress');
+    
+    // Reset UI
+    resetUI();
+    
+    // Show reset confirmation
+    showResetSuccess();
+    
+    // Go back to overview
+    showModule('overview');
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-module="overview"]').classList.add('active');
+}
+
+// Reset UI elements
+function resetUI() {
+    // Reset all steps
+    document.querySelectorAll('.step').forEach(step => {
+        step.classList.remove('completed');
+    });
+    
+    // Reset all badges
+    document.querySelectorAll('.badge').forEach(badge => {
+        badge.classList.remove('unlocked');
+        badge.classList.add('locked');
+    });
+    
+    // Hide success messages
+    document.querySelectorAll('.success-message, .celebration-trigger').forEach(element => {
+        element.style.display = 'none';
+    });
+    
+    // Update counters
+    updateUI();
+}
+
+// Show reset success message
+function showResetSuccess() {
+    const notification = document.createElement('div');
+    notification.className = 'badge-notification';
+    notification.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <h3>🎮 Game Reset Successfully!</h3>
+            <p>Your Power BI quest starts fresh. Good luck!</p>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}

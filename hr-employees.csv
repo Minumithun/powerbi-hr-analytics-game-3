@@ -1,0 +1,21 @@
+Employee_ID,Employee_Name,Department,Gender,Hire_Date,Performance_Rating,Salary
+1001,John Smith,HR,Male,2022-01-15,4.2,55000
+1002,Sarah Johnson,IT,Female,2022-02-20,4.8,72000
+1003,Mike Davis,Sales,Male,2021-11-10,3.9,48000
+1004,Emily Brown,Marketing,Female,2022-03-05,4.5,62000
+1005,David Wilson,IT,Male,2021-12-18,4.1,68000
+1006,Lisa Garcia,HR,Female,2022-01-28,4.6,58000
+1007,James Miller,Sales,Male,2021-10-15,4.0,52000
+1008,Jessica Taylor,Marketing,Female,2022-04-12,4.3,59000
+1009,Robert Anderson,IT,Male,2021-09-30,4.7,75000
+1010,Amanda Martinez,Sales,Female,2022-02-14,4.4,51000
+1011,Christopher Lee,HR,Male,2021-11-22,3.8,54000
+1012,Jennifer White,Marketing,Female,2022-03-18,4.2,61000
+1013,Matthew Harris,IT,Male,2021-08-25,4.9,78000
+1014,Ashley Clark,Sales,Female,2022-01-07,4.0,49000
+1015,Daniel Lewis,HR,Male,2021-12-05,4.3,56000
+1016,Michelle Walker,Marketing,Female,2022-04-20,4.6,63000
+1017,Andrew Hall,IT,Male,2021-07-14,4.1,70000
+1018,Stephanie Young,Sales,Female,2022-02-28,4.4,53000
+1019,Kevin King,HR,Male,2021-10-08,3.9,55000
+1020,Nicole Wright,Marketing,Female,2022-03-25,4.5,60000

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Quest: HR Analytics Mastery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="logo">
+                <h1>🎮 Power BI Quest: HR Analytics</h1>
+            </div>
+            <div class="player-stats">
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span id="total-points">0</span> Points
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span id="badges-count">0</span>/5 Badges
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overall-progress"></div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="module-nav">
+            <button class="nav-btn active" data-module="overview">🏠 Overview</button>
+            <button class="nav-btn" data-module="module1">🔗 Connect Data</button>
+            <button class="nav-btn" data-module="module2">📊 Visualizations</button>
+            <button class="nav-btn" data-module="module3">🎨 Dashboard Design</button>
+            <button class="nav-btn" data-module="module4">🔍 Filters & Slicers</button>
+            <button class="nav-btn" data-module="module5">🚀 Publishing</button>
+        </nav>
+
+        <div class="badges-container">
+            <div class="badge locked" id="badge-connector" title="Data Connector">🔗</div>
+            <div class="badge locked" id="badge-charts" title="Chart Master">📊</div>
+            <div class="badge locked" id="badge-design" title="Design Guru">🎨</div>
+            <div class="badge locked" id="badge-filters" title="Filter Expert">🔍</div>
+            <div class="badge locked" id="badge-hero" title="Dashboard Hero">🚀</div>
+        </div>
+
+        <main class="game-content">
+            <!-- Overview Section -->
+            <section id="overview" class="module-content active">
+                <div class="welcome-card">
+                    <h2>🎯 Welcome to HR Analytics Mastery!</h2>
+                    <p>Transform your recruitment team into Power BI experts! This interactive quest will guide you through creating professional HR dashboards step by step.</p>
+                    
+                    <div class="download-section">
+                        <h3>📥 Download Sample Data:</h3>
+                        <div class="download-buttons">
+                            <a href="hr-employees.csv" download class="download-btn">
+                                <i class="fas fa-download"></i> Employee Data
+                            </a>
+                            <a href="recruitment-metrics.csv" download class="download-btn">
+                                <i class="fas fa-download"></i> Recruitment Data
+                            </a>
+                            <a href="performance-data.csv" download class="download-btn">
+                                <i class="fas fa-download"></i> Performance Data
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="prerequisites">
+                        <h3>✅ Before You Start:</h3>
+                        <ul>
+                            <li>Power BI Desktop installed</li>
+                            <li>Downloaded sample data files</li>
+                            <li>Keep this browser tab open alongside Power BI</li>
+                        </ul>
+                    </div>
+
+                    <div class="getting-started">
+                        <h3>🚀 Ready to Start?</h3>
+                        <p>Click on any module above to begin your Power BI journey. You can complete modules in any order!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module 1: Data Connection -->
+            <section id="module1" class="module-content">
+                <div class="module-header">
+                    <h2>🔗 Module 1: Connect Your Data</h2>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="module1-progress"></div>
+                        </div>
+                        <span id="module1-status">0/4 Steps Complete</span>
+                    </div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step" data-step="1" data-module="1">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Open Power BI Desktop</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🚀 Launch Power BI Desktop on your computer.</p>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>Tip:</strong> If you see a startup screen, click "Get data" or select a blank report.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2" data-module="1">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Get Data from CSV</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📁 Click "Get Data" → "Text/CSV" → Select the <strong>hr-employees.csv</strong> file you downloaded.</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>In Power BI Desktop, click <strong>"Get Data"</strong> button</li>
+                                    <li>Select <strong>"Text/CSV"</strong> from the list</li>
+                                    <li>Browse and select your downloaded <strong>hr-employees.csv</strong> file</li>
+                                    <li>Click <strong>"Open"</strong></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="3" data-module="1">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Preview and Load Data</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>👀 Review the data preview and click <strong>"Load"</strong> to import your employee data.</p>
+                            <div class="challenge">
+                                <i class="fas fa-star"></i>
+                                <strong>Bonus Challenge:</strong> Count how many columns you see in the preview! (+25 bonus points when you complete this step)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="4" data-module="1">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3>Add More Data Sources</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🔄 Repeat the process to load <strong>recruitment-metrics.csv</strong> and <strong>performance-data.csv</strong></p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click "Get Data" again</li>
+                                    <li>Select "Text/CSV"</li>
+                                    <li>Load <strong>recruitment-metrics.csv</strong></li>
+                                    <li>Repeat for <strong>performance-data.csv</strong></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module 2: Visualizations -->  
+            <section id="module2" class="module-content">
+                <div class="module-header">
+                    <h2>📊 Module 2: Create Stunning Visualizations</h2>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="module2-progress"></div>
+                        </div>
+                        <span id="module2-status">0/5 Steps Complete</span>
+                    </div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step" data-step="1" data-module="2">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Create Your First Chart: Employee Count by Department</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📊 From the Visualizations pane, select <strong>Clustered Column Chart</strong></p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Look for the Visualizations panel on the right side</li>
+                                    <li>Click on the <strong>Clustered Column Chart</strong> icon</li>
+                                    <li>From the Fields panel, drag <strong>Department</strong> to the <strong>Axis</strong> area</li>
+                                    <li>Drag <strong>Employee_ID</strong> to the <strong>Values</strong> area (it will automatically count)</li>
+                                </ol>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>Expected Result:</strong> You should see a column chart showing the count of employees in each department!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2" data-module="2">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Pie Chart: Gender Distribution</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🥧 Create a <strong>Pie Chart</strong> showing gender distribution:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click on empty space in your report canvas</li>
+                                    <li>Select <strong>Pie Chart</strong> from visualizations</li>
+                                    <li>Drag <strong>Gender</strong> to <strong>Legend</strong></li>
+                                    <li>Drag <strong>Employee_ID</strong> to <strong>Values</strong></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="3" data-module="2">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Line Chart: Hiring Trends Over Time</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📈 Create a <strong>Line Chart</strong> for hiring trends:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click on empty space in your canvas</li>
+                                    <li>Select <strong>Line Chart</strong> from visualizations</li>
+                                    <li>Drag <strong>Hire_Date</strong> to <strong>Axis</strong></li>
+                                    <li>Drag <strong>Employee_ID</strong> to <strong>Values</strong></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="4" data-module="2">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3>Card Visual: Total Employees</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🃏 Create a <strong>Card</strong> visual showing total employee count:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click on empty space</li>
+                                    <li>Select <strong>Card</strong> from visualizations</li>
+                                    <li>Drag <strong>Employee_ID</strong> to <strong>Fields</strong></li>
+                                </ol>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>Pro Tip:</strong> This will show your total employee count as a big number - perfect for KPIs!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="5" data-module="2">
+                        <div class="step-header">
+                            <span class="step-number">5</span>
+                            <h3>Table: Employee Details</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📋 Create a <strong>Table</strong> showing employee details:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Select <strong>Table</strong> visualization</li>
+                                    <li>Add <strong>Employee_Name</strong> to Values</li>
+                                    <li>Add <strong>Department</strong> to Values</li>
+                                    <li>Add <strong>Performance_Rating</strong> to Values</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module 3: Dashboard Design -->
+            <section id="module3" class="module-content">
+                <div class="module-header">
+                    <h2>🎨 Module 3: Dashboard Design & Formatting</h2>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="module3-progress"></div>
+                        </div>
+                        <span id="module3-status">0/4 Steps Complete</span>
+                    </div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step" data-step="1" data-module="3">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Arrange Your Visuals</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🎯 Drag and resize your visuals to create a professional layout:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click and drag visuals to move them around</li>
+                                    <li>Drag corners to resize visuals</li>
+                                    <li>Place Card visuals (KPIs) at the top</li>
+                                    <li>Arrange charts in a logical flow below</li>
+                                </ol>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>Layout Tip:</strong> Leave some white space between visuals for better readability!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2" data-module="3">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Apply Consistent Colors</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🎨 Format your visuals with consistent colors:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Select a visual (click on it)</li>
+                                    <li>Go to the <strong>Format</strong> pane (paint roller icon)</li>
+                                    <li>Expand <strong>Data colors</strong></li>
+                                    <li>Choose colors: Blue (#1f77b4), Orange (#ff7f0e), Green (#2ca02c)</li>
+                                    <li>Repeat for other visuals</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="3" data-module="3">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Add Titles and Format Text</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📝 Make your dashboard professional with titles:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Select a visual</li>
+                                    <li>In Format pane, find <strong>Title</strong></li>
+                                    <li>Turn <strong>Title</strong> ON</li>
+                                    <li>Change title text (e.g., "Employees by Department")</li>
+                                    <li>Repeat for all visuals</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="4" data-module="3">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3>Add Background and Final Polish</h3>
+                            <button class="complete-btn">Mark Complete (+25 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>✨ Final touches for a professional look:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click on empty space in your report</li>
+                                    <li>Go to Format pane</li>
+                                    <li>Find <strong>Page background</strong></li>
+                                    <li>Choose a subtle color (light gray or white)</li>
+                                    <li>Ensure all text is readable</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module 4: Filters & Slicers -->
+            <section id="module4" class="module-content">
+                <div class="module-header">
+                    <h2>🔍 Module 4: Interactive Filters & Slicers</h2>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="module4-progress"></div>
+                        </div>
+                        <span id="module4-status">0/3 Steps Complete</span>
+                    </div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step" data-step="1" data-module="4">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Add Department Slicer</h3>
+                            <button class="complete-btn">Mark Complete (+75 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🎛️ Create an interactive department filter:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Click on empty space</li>
+                                    <li>Select <strong>Slicer</strong> from visualizations</li>
+                                    <li>Drag <strong>Department</strong> to <strong>Field</strong></li>
+                                    <li>Test it - click different departments and watch your charts update!</li>
+                                </ol>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>Magic Moment:</strong> When you click on a department, all your visuals will filter automatically!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2" data-module="4">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Add Date Range Slicer</h3>
+                            <button class="complete-btn">Mark Complete (+75 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📅 Create a date range filter:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Add another <strong>Slicer</strong></li>
+                                    <li>Drag <strong>Hire_Date</strong> to Field</li>
+                                    <li>Go to Format pane → Slicer settings</li>
+                                    <li>Change to <strong>Range slider</strong> for date ranges</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="3" data-module="4">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Test Interactivity</h3>
+                            <button class="complete-btn">Mark Complete (+75 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>🧪 Test your interactive dashboard:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Try selecting different departments</li>
+                                    <li>Adjust the date range slider</li>
+                                    <li>Notice how all visuals update together</li>
+                                    <li>Try selecting multiple departments (Ctrl+Click)</li>
+                                </ol>
+                            </div>
+                            <div class="challenge">
+                                <i class="fas fa-star"></i>
+                                <strong>Final Challenge:</strong> Can you find which department hired the most people in the last year?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module 5: Publishing -->
+            <section id="module5" class="module-content">
+                <div class="module-header">
+                    <h2>🚀 Module 5: Save and Share Your Dashboard</h2>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="module5-progress"></div>
+                        </div>
+                        <span id="module5-status">0/2 Steps Complete</span>
+                    </div>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step" data-step="1" data-module="5">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Save Your Work</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>💾 Save your dashboard:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Press <strong>Ctrl+S</strong> or go to File → Save As</li>
+                                    <li>Name it: "HR Analytics Dashboard - [Your Name]"</li>
+                                    <li>Choose a location you'll remember</li>
+                                    <li>Click Save</li>
+                                </ol>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>Best Practice:</strong> Save your work regularly to avoid losing progress!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2" data-module="5">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Export and Share Options</h3>
+                            <button class="complete-btn">Mark Complete (+50 pts)</button>
+                        </div>
+                        <div class="step-content">
+                            <p>📤 Learn sharing options:</p>
+                            <div class="instruction-steps">
+                                <ol>
+                                    <li>Go to <strong>File → Export</strong></li>
+                                    <li>Try <strong>Export to PDF</strong> (perfect for presentations)</li>
+                                    <li>Try <strong>Export to PowerPoint</strong> (for team meetings)</li>
+                                    <li>Note: Publishing to Power BI Service requires a license</li>
+                                </ol>
+                            </div>
+                            <div class="celebration-trigger" style="display: none;">
+                                <div class="final-celebration">
+                                    <h3>🎉 MISSION ACCOMPLISHED! 🎉</h3>
+                                    <p>You've completed the Power BI Quest and become a <strong>"Dashboard Hero"</strong>!</p>
+                                    <div class="final-stats">
+                                        <p>🏆 All 5 badges unlocked!</p>
+                                        <p>⭐ You're now a Power BI expert!</p>
+                                        <p>📊 Ready to create amazing HR dashboards!</p>
+                                    </div>
+                                    <div class="share-achievement">
+                                        <h4>🎯 What's Next?</h4>
+                                        <ul>
+                                            <li>Create dashboards for your real recruitment data</li>
+                                            <li>Share your knowledge with colleagues</li>
+                                            <li>Explore advanced Power BI features</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
